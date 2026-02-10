@@ -3,49 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invitación Especial ❤️</title>
+    <title>Para mi San Valentín ❤️</title>
     <style>
         body { margin: 0; height: 100vh; display: flex; align-items: center; justify-content: center; background-color: #ffebee; font-family: 'Arial', sans-serif; overflow: hidden; text-align: center; }
-        #pantalla-principal, #pantalla-exito {
-            z-index: 10; background: rgba(255, 255, 255, 0.95); padding: 30px; border-radius: 25px; 
+        #tarjeta, #pantalla-exito {
+            z-index: 10; background: white; padding: 30px; border-radius: 25px; 
             box-shadow: 0 10px 30px rgba(0,0,0,0.1); width: 85%; max-width: 400px;
         }
         #pantalla-exito { display: none; }
         h1 { color: #d32f2f; font-size: 1.5rem; margin-bottom: 20px; min-height: 80px; display: flex; align-items: center; justify-content: center; }
-        .gif-container { width: 100%; max-width: 200px; margin: 0 auto 15px; min-height: 150px; }
-        img { width: 100%; border-radius: 15px; }
-        .buttons { margin-top: 20px; position: relative; height: 100px; width: 100%; display: flex; align-items: center; justify-content: center; }
+        .gif-container { width: 100%; max-width: 220px; margin: 0 auto 15px; }
+        img { width: 100%; border-radius: 15px; display: block; }
+        .buttons { margin-top: 20px; position: relative; height: 100px; display: flex; align-items: center; justify-content: center; }
         button { padding: 15px 25px; font-size: 1rem; border: none; border-radius: 50px; cursor: pointer; font-weight: bold; transition: 0.3s; position: absolute; }
         #btnSi { background-color: #ff4081; color: white; transform: translateX(-70px); z-index: 20; }
         #btnNo { background-color: #9e9e9e; color: white; transform: translateX(70px); }
-        .info-cita { color: #333; text-align: left; background: #fffde7; padding: 20px; border-radius: 15px; border: 2px dashed #ffc107; font-size: 0.95rem; line-height: 1.6; }
-        .btn-mapa { display: block; margin-top: 15px; padding: 12px; background-color: #4285F4; color: white; text-decoration: none; border-radius: 10px; font-weight: bold; text-align: center; }
+        .info-cita { color: #333; text-align: left; background: #fffde7; padding: 20px; border-radius: 15px; border: 2px dashed #ffc107; font-size: 0.95rem; }
+        .btn-mapa { display: block; margin-top: 15px; padding: 12px; background-color: #4285F4; color: white; text-decoration: none; border-radius: 10px; font-weight: bold; }
         .corazon { position: fixed; top: -10%; user-select: none; z-index: 1; animation: caida linear forwards; }
         @keyframes caida { to { transform: translateY(110vh) rotate(360deg); } }
     </style>
 </head>
 <body>
 
-    <div id="pantalla-principal">
+    <div id="tarjeta">
         <div class="gif-container">
-            <img id="main-gif" src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpueXNid2Z0bm9oZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/cLS1cfxvGOPVpf9g3y/giphy.webp">
+            <img id="img-principal" src="https://res.cloudinary.com/dpv7re93a/image/upload/v1707577893/cat-love_v2sq9i.gif">
         </div>
         <h1 id="pregunta">¿Quieres ser mi San Valentín? ❤️</h1>
         <div class="buttons">
-            <button id="btnSi" onclick="procesarSi()">¡SÍ! 😍</button>
-            <button id="btnNo" onmouseover="moverBoton(this)" onclick="moverBoton(this)">NO 😢</button>
+            <button id="btnSi" onclick="siguientePaso()">¡SÍ! 😍</button>
+            <button id="btnNo" onmouseover="escapar()" onclick="escapar()">NO 😢</button>
         </div>
     </div>
 
     <div id="pantalla-exito">
         <div class="gif-container">
-            <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExOXM4amZ6ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/l41lTfuxV6m6zT1O8/giphy.webp">
+            <img src="https://res.cloudinary.com/dpv7re93a/image/upload/v1707577893/cute-bear_ebp1v2.gif">
         </div>
-        <h1>¡YEIII! Sabía que aceptarías 😍</h1>
+        <h1>¡SÍII! Sabía que aceptarías 😍</h1>
         <div class="info-cita">
-            <p><strong>📍 Dónde:</strong> Enco 1069, Pudahuel</p>
-            <p><strong>⏰ Hora:</strong> 20:00 PM</p>
-            <p><strong>📅 Fecha:</strong> 14 de Febrero</p>
+            <p>📍 <strong>Dónde:</strong> Enco 1069, Pudahuel</p>
+            <p>⏰ <strong>Hora:</strong> 20:00 PM</p>
+            <p>📅 <strong>Fecha:</strong> 14 de Febrero</p>
             <a class="btn-mapa" href="https://www.google.com/maps/search/?api=1&query=Enco+1069,+Pudahuel" target="_blank">📍 Cómo llegar</a>
         </div>
         <p style="margin-top: 15px; color: #d32f2f; font-weight: bold;">¡Nos vemos allá! 🌹</p>
@@ -53,57 +53,51 @@
 
     <script>
         let paso = 0;
-        const preguntas = [
+        const textosSi = [
             "¿Quieres ser mi San Valentín? ❤️",
             "¿Estás segura? 🧐",
             "¿Muy segura? 🤔",
             "¿Realmente segura? 🥺"
         ];
 
-        // GIFs para cada etapa (Duda -> Tristeza si intenta NO)
-        const gifDuda = "https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHIzb3Z6bmZ6bmZ6bmZ6bmZ6bmZ6bmZ6bmZ6bmZ6bmZ6bmZ6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/26hpKz7zMQZLQ5/giphy.webp";
-        const gifTriste = "https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHpueXNid2Z0bm9oZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/OPU6wUKARAtaU/giphy.webp";
-
-        function procesarSi() {
+        function siguientePaso() {
             paso++;
-            if (paso < preguntas.length) {
-                document.getElementById('pregunta').innerText = preguntas[paso];
-                document.getElementById('main-gif').src = gifDuda;
-                
-                // El botón de SÍ crece significativamente
+            if (paso < textosSi.length) {
+                document.getElementById('pregunta').innerText = textosSi[paso];
                 const btnSi = document.getElementById('btnSi');
-                btnSi.style.transform = `translateX(-70px) scale(${1 + paso * 0.4})`;
+                // El botón crece significativamente en cada clic
+                btnSi.style.transform = `translateX(-70px) scale(${1 + paso * 0.5})`;
             } else {
-                mostrarExito();
+                mostrarFinal();
             }
         }
 
-        function moverBoton(btn) {
+        function escapar() {
+            const btn = document.getElementById('btnNo');
             const x = Math.random() * (window.innerWidth - btn.offsetWidth);
             const y = Math.random() * (window.innerHeight - btn.offsetHeight);
             btn.style.position = 'fixed';
             btn.style.left = x + 'px';
             btn.style.top = y + 'px';
-            document.getElementById('main-gif').src = gifTriste;
         }
 
-        function mostrarExito() {
-            document.getElementById('pantalla-principal').style.display = 'none';
+        function mostrarFinal() {
+            document.getElementById('tarjeta').style.display = 'none';
             document.getElementById('pantalla-exito').style.display = 'block';
-            for(let i=0; i<60; i++) { setTimeout(crearCorazon, i * 50); }
+            for(let i=0; i<60; i++) { setTimeout(soltarCorazon, i * 100); }
         }
 
-        function crearCorazon() {
-            const corazon = document.createElement('div');
-            corazon.innerHTML = '❤️';
-            corazon.classList.add('corazon');
-            corazon.style.left = Math.random() * 100 + 'vw';
-            corazon.style.fontSize = Math.random() * 20 + 10 + 'px';
-            corazon.style.animationDuration = Math.random() * 3 + 2 + 's';
-            document.body.appendChild(corazon);
-            setTimeout(() => corazon.remove(), 5000);
+        function soltarCorazon() {
+            const c = document.createElement('div');
+            c.innerHTML = '❤️';
+            c.classList.add('corazon');
+            c.style.left = Math.random() * 100 + 'vw';
+            c.style.fontSize = Math.random() * 20 + 10 + 'px';
+            c.style.animationDuration = Math.random() * 3 + 2 + 's';
+            document.body.appendChild(c);
+            setTimeout(() => c.remove(), 5000);
         }
-        setInterval(crearCorazon, 400);
+        setInterval(soltarCorazon, 400);
     </script>
 </body>
 </html>

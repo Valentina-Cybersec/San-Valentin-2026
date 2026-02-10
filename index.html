@@ -12,7 +12,7 @@
         }
         #pantalla-exito { display: none; }
         h1 { color: #d32f2f; font-size: 1.5rem; margin-bottom: 20px; min-height: 80px; display: flex; align-items: center; justify-content: center; }
-        .gif-container { width: 100%; max-width: 220px; margin: 0 auto 15px; min-height: 150px; display: flex; align-items: center; justify-content: center; }
+        .gif-container { width: 100%; max-width: 220px; margin: 0 auto 15px; min-height: 150px; }
         img { width: 100%; border-radius: 15px; display: block; }
         .buttons { margin-top: 20px; position: relative; height: 120px; display: flex; align-items: center; justify-content: center; }
         button { padding: 15px 25px; font-size: 1rem; border: none; border-radius: 50px; cursor: pointer; font-weight: bold; transition: 0.3s; position: absolute; }
@@ -28,7 +28,7 @@
 
     <div id="tarjeta">
         <div class="gif-container">
-            <img id="img-principal" src="https://i.imgur.com/6oYp9S3.gif" alt="❤️">
+            <img id="img-principal" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpueXNid2Z0bm9oZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/cLS1cfxvGOPVpf9g3y/giphy.gif">
         </div>
         <h1 id="pregunta">¿Quieres ser mi San Valentín? ❤️</h1>
         <div class="buttons">
@@ -39,7 +39,7 @@
 
     <div id="pantalla-exito">
         <div class="gif-container">
-            <img src="https://i.imgur.com/B99S8S9.gif" alt="🎉">
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOXM4amZ6ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/l41lTfuxV6m6zT1O8/giphy.gif">
         </div>
         <h1>¡YEIII! Sabía que aceptarías 😍</h1>
         <div class="info-cita">
@@ -65,10 +65,9 @@
             if (paso < textosSi.length) {
                 document.getElementById('pregunta').innerText = textosSi[paso];
                 const btnSi = document.getElementById('btnSi');
-                // El botón crece para que sea imposible no verlo
-                btnSi.style.transform = `translateX(-75px) scale(${1 + paso * 0.6})`;
-                // Cambio de imagen a una de duda
-                document.getElementById('img-principal').src = "https://i.imgur.com/97S7FmS.gif";
+                btnSi.style.transform = `translateX(-75px) scale(${1 + paso * 0.7})`;
+                // GIF de duda (Gato con anteojos)
+                document.getElementById('img-principal').src = "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHIzb3Z6bmZ6bmZ6bmZ6bmZ6bmZ6bmZ6bmZ6bmZ6bmZ6bmZ6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/26hpKz7zMQZLQ5/giphy.gif";
             } else {
                 mostrarFinal();
             }
@@ -81,8 +80,8 @@
             btn.style.position = 'fixed';
             btn.style.left = x + 'px';
             btn.style.top = y + 'px';
-            // Imagen triste si intenta decir que no
-            document.getElementById('img-principal').src = "https://i.imgur.com/9vD8v6X.gif";
+            // GIF triste si intenta decir NO
+            document.getElementById('img-principal').src = "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHpueXNid2Z0bm9oZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/OPU6wUKARAtaU/giphy.gif";
         }
 
         function mostrarFinal() {

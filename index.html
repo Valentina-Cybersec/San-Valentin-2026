@@ -6,19 +6,19 @@
     <title>Invitación Especial ❤️</title>
     <style>
         body { margin: 0; height: 100vh; display: flex; align-items: center; justify-content: center; background-color: #ffebee; font-family: 'Arial', sans-serif; overflow: hidden; text-align: center; }
-        #pantalla-invitacion, #pantalla-exito {
+        #pantalla-principal, #pantalla-exito {
             z-index: 10; background: rgba(255, 255, 255, 0.95); padding: 30px; border-radius: 25px; 
             box-shadow: 0 10px 30px rgba(0,0,0,0.1); width: 85%; max-width: 400px;
         }
         #pantalla-exito { display: none; }
-        h1 { color: #d32f2f; font-size: 1.6rem; margin-bottom: 20px; }
-        .gif-container { width: 100%; max-width: 220px; margin: 0 auto 15px; min-height: 150px; }
-        img { width: 100%; border-radius: 15px; display: block; }
+        h1 { color: #d32f2f; font-size: 1.4rem; margin-bottom: 20px; min-height: 60px; display: flex; align-items: center; justify-content: center; }
+        .gif-container { width: 100%; max-width: 200px; margin: 0 auto 15px; min-height: 150px; }
+        img { width: 100%; border-radius: 15px; }
         .buttons { margin-top: 20px; position: relative; height: 65px; width: 100%; }
-        button { padding: 15px 25px; font-size: 1rem; border: none; border-radius: 50px; cursor: pointer; position: absolute; font-weight: bold; transition: 0.2s; }
+        button { padding: 15px 25px; font-size: 1rem; border: none; border-radius: 50px; cursor: pointer; position: absolute; font-weight: bold; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
         #btnSi { background-color: #ff4081; color: white; left: 5%; }
         #btnNo { background-color: #9e9e9e; color: white; right: 5%; }
-        .info-cita { color: #333; text-align: left; background: #fffde7; padding: 20px; border-radius: 15px; border: 2px dashed #ffc107; font-size: 0.95rem; }
+        .info-cita { color: #333; text-align: left; background: #fffde7; padding: 20px; border-radius: 15px; border: 2px dashed #ffc107; font-size: 0.95rem; line-height: 1.6; }
         .btn-mapa { display: block; margin-top: 15px; padding: 12px; background-color: #4285F4; color: white; text-decoration: none; border-radius: 10px; font-weight: bold; text-align: center; }
         .corazon { position: fixed; top: -10%; user-select: none; z-index: 1; animation: caida linear forwards; }
         @keyframes caida { to { transform: translateY(110vh) rotate(360deg); } }
@@ -26,32 +26,69 @@
 </head>
 <body>
 
-    <div id="pantalla-invitacion">
+    <div id="pantalla-principal">
         <div class="gif-container">
-            <img id="main-gif" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpueXNid2Z0bm9oZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/cLS1cfxvGOPVpf9g3y/giphy.gif" alt="Cargando...">
+            <img id="main-gif" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpueXNid2Z0bm9oZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/cLS1cfxvGOPVpf9g3y/giphy.gif">
         </div>
-        <h1>¿Quieres ser mi San Valentín? ❤️</h1>
+        <h1 id="pregunta">¿Quieres ser mi San Valentín? ❤️</h1>
         <div class="buttons">
-            <button id="btnSi" onclick="mostrarExito()">¡SÍ! 😍</button>
+            <button id="btnSi" onclick="procesarSi()">¡SÍ! 😍</button>
             <button id="btnNo" onmouseover="moverBoton(this)" onclick="moverBoton(this)">NO 😢</button>
         </div>
     </div>
 
     <div id="pantalla-exito">
         <div class="gif-container">
-            <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExOXM4amZ6ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/l41lTfuxV6m6zT1O8/giphy.gif" alt="¡Yeeey!">
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOXM4amZ6ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/l41lTfuxV6m6zT1O8/giphy.gif">
         </div>
         <h1>¡SÍII! Sabía que aceptarías 😍</h1>
         <div class="info-cita">
             <p><strong>📍 Dónde:</strong> Enco 1069, Pudahuel</p>
             <p><strong>⏰ Hora:</strong> 20:00 PM</p>
             <p><strong>📅 Fecha:</strong> 14 de Febrero</p>
-            <a class="btn-mapa" href="https://www.google.com/maps/search/?api=1&query=Enco+1069,+Pudahuel" target="_blank">📍 Cómo llegar</a>
+            <a class="btn-mapa" href="https://www.google.com/maps/search/?api=1&query=Enco+1069+Pudahuel" target="_blank">📍 Cómo llegar</a>
         </div>
-        <p style="margin-top: 15px; color: #d32f2f; font-weight: bold;">¡Paso por ti! 🌹</p>
+        <p style="margin-top: 15px; color: #d32f2f; font-weight: bold;">¡Nos vemos allá! 🌹</p>
     </div>
 
     <script>
+        let paso = 0;
+        const preguntas = [
+            "¿Quieres ser mi San Valentín? ❤️",
+            "¿Estás segura? 🧐",
+            "¿Muy segura? 🤔",
+            "¿Realmente segura? 🥺"
+        ];
+
+        function procesarSi() {
+            paso++;
+            if (paso < preguntas.length) {
+                document.getElementById('pregunta').innerText = preguntas[paso];
+                const btnSi = document.getElementById('btnSi');
+                btnSi.style.transform = `scale(${1 + paso * 0.2})`; // Crece con cada clic
+                // Cambiar a un GIF de duda divertida
+                document.getElementById('main-gif').src = "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHIzb3Z6bmZ6bmZ6bmZ6bmZ6bmZ6bmZ6bmZ6bmZ6bmZ6bmZ6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/26hpKz7zMQZLQ5/giphy.gif";
+            } else {
+                mostrarExito();
+            }
+        }
+
+        function moverBoton(btn) {
+            const x = Math.random() * (window.innerWidth - btn.offsetWidth);
+            const y = Math.random() * (window.innerHeight - btn.offsetHeight);
+            btn.style.position = 'fixed';
+            btn.style.left = x + 'px';
+            btn.style.top = y + 'px';
+            // GIF de carita llorando si intenta decir NO
+            document.getElementById('main-gif').src = "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHpueXNid2Z0bm9oZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/OPU6wUKARAtaU/giphy.gif";
+        }
+
+        function mostrarExito() {
+            document.getElementById('pantalla-principal').style.display = 'none';
+            document.getElementById('pantalla-exito').style.display = 'block';
+            for(let i=0; i<60; i++) { setTimeout(crearCorazon, i * 50); }
+        }
+
         function crearCorazon() {
             const corazon = document.createElement('div');
             corazon.innerHTML = '❤️';
@@ -63,22 +100,6 @@
             setTimeout(() => corazon.remove(), 5000);
         }
         setInterval(crearCorazon, 400);
-
-        function moverBoton(btn) {
-            const x = Math.random() * (window.innerWidth - btn.offsetWidth);
-            const y = Math.random() * (window.innerHeight - btn.offsetHeight);
-            btn.style.position = 'fixed';
-            btn.style.left = x + 'px';
-            btn.style.top = y + 'px';
-            // GIF de carita triste al intentar decir NO
-            document.getElementById('main-gif').src = "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHpueXNid2Z0bm9oZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/OPU6wUKARAtaU/giphy.gif";
-        }
-
-        function mostrarExito() {
-            document.getElementById('pantalla-invitacion').style.display = 'none';
-            document.getElementById('pantalla-exito').style.display = 'block';
-            for(let i=0; i<50; i++) { setTimeout(crearCorazon, i * 60); }
-        }
     </script>
 </body>
 </html>
